@@ -3,11 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="loginViewModel"
+            type="com.udacity.shoestore.screens.login.LoginViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/emailTv"
@@ -17,14 +22,14 @@
             android:layout_marginTop="@dimen/big_margin"
             android:text="@string/email"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/passTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/password"
             android:layout_marginTop="@dimen/big_margin"
+            android:text="@string/password"
             app:layout_constraintStart_toStartOf="@+id/email_input"
             app:layout_constraintTop_toBottomOf="@+id/email_input" />
 
@@ -52,17 +57,19 @@
             android:id="@+id/login_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/big_margin"
+            android:onClick="@{()-> loginViewModel.onBtnClicked()}"
             android:text="@string/login"
             app:layout_constraintEnd_toStartOf="@+id/signup_btn"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="@dimen/big_margin"
             app:layout_constraintTop_toBottomOf="@+id/password_input" />
 
         <Button
             android:id="@+id/signup_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="@{()-> loginViewModel.onBtnClicked()}"
             android:text="@string/sign_up"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
