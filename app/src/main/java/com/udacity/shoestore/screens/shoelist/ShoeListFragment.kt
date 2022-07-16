@@ -1,18 +1,15 @@
 package com.udacity.shoestore.screens.shoelist
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
-import timber.log.Timber
 
 
 class ShoeListFragment : Fragment() {
@@ -26,17 +23,28 @@ class ShoeListFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(ShoeListViewModel::class.java)
         binding.shoeListViewModel = viewModel
 
-        viewModel.eventAddNewShoe.observe(viewLifecycleOwner, Observer { isClicked ->
+        viewModel.eventAddNewShoe.observe(viewLifecycleOwner) { isClicked ->
             if (isClicked) {
                 this.findNavController().navigate(R.id.action_shoeListFragment_to_detailFragment)
                 viewModel.onAddNewShoeComplete()
             }
+            setHasOptionsMenu(true)
 
-        })
-
-
+        }
 
         return binding.root
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_logout, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        return NavigationUI.onNavDestinationSelected(
+            item,
+            view!!.findNavController()
+        ) || super.onOptionsItemSelected(item)
+    }
 }

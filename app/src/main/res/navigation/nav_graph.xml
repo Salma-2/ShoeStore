@@ -10,6 +10,7 @@
         android:name="com.udacity.shoestore.screens.login.LoginFragment"
         android:label="@string/login_fragment"
         tools:layout="@layout/fragment_login">
+
         <action
             android:id="@+id/action_loginFragment_to_welcomeFragment"
             app:destination="@id/welcomeFragment"
@@ -39,5 +40,11 @@
         android:id="@+id/detailFragment"
         android:name="com.udacity.shoestore.screens.detail.DetailFragment"
         android:label="@string/detail_fragment"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_shoeListFragment"
+            app:destination="@id/shoeListFragment"
+            app:popUpTo="@id/shoeListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

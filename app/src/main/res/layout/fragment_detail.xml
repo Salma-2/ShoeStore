@@ -1,17 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <data>
+
+        <variable
+            name="detailViewModel"
+            type="com.udacity.shoestore.screens.detail.DetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".screens.detail.DetailFragment">
 
+        <TextView
+            android:id="@+id/shoe_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/shoe_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/shoe_name_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/shoe_name"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="@+id/shoe_name_tv"
+            app:layout_constraintTop_toBottomOf="@+id/shoe_name_tv" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="detail" />
+            android:id="@+id/company_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/company"
+            app:layout_constraintStart_toStartOf="@+id/shoe_name_input"
+            app:layout_constraintTop_toBottomOf="@+id/shoe_name_input" />
 
-    </FrameLayout>
+        <EditText
+            android:id="@+id/company_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/company"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="@+id/company_tv"
+            app:layout_constraintTop_toBottomOf="@+id/company_tv" />
+
+        <TextView
+            android:id="@+id/size_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/shoe_size"
+            app:layout_constraintStart_toStartOf="@+id/company_input"
+            app:layout_constraintTop_toBottomOf="@+id/company_input" />
+
+        <EditText
+            android:id="@+id/size_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/shoe_size"
+            android:inputType="number"
+            app:layout_constraintStart_toStartOf="@+id/size_tv"
+            app:layout_constraintTop_toBottomOf="@+id/size_tv" />
+
+        <TextView
+            android:id="@+id/desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/description"
+            app:layout_constraintStart_toStartOf="@+id/size_input"
+            app:layout_constraintTop_toBottomOf="@+id/size_input" />
+
+        <EditText
+            android:id="@+id/desc_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/description"
+            android:inputType="textMultiLine"
+            app:layout_constraintStart_toStartOf="@+id/desc_tv"
+            app:layout_constraintTop_toBottomOf="@+id/desc_tv" />
+
+        <Button
+            android:id="@+id/save_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->detailViewModel.onCancel()}"
+            android:text="@string/cancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cancel_btn"
+            app:layout_constraintTop_toTopOf="@+id/cancel_btn" />
+
+        <Button
+            android:id="@+id/cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->detailViewModel.onSave()}"
+            android:text="@string/save"
+            app:layout_constraintEnd_toStartOf="@+id/save_btn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/desc_input" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

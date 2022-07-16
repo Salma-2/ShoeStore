@@ -13,4 +13,11 @@
     <string name="detail_fragment">Detail</string>
     <string name="shoe_list_fragment">Shoe List</string>
     <string name="add_new_shoe">Add New Shoe</string>
+    <string name="logout">Logout</string>
+    <string name="shoe_name">Shoe Name</string>
+    <string name="company">Company</string>
+    <string name="shoe_size">Shoe Size</string>
+    <string name="description">Description</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
 </resources>
