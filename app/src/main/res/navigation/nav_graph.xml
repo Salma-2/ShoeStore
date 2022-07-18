@@ -10,6 +10,7 @@
         android:name="com.udacity.shoestore.screens.login.LoginFragment"
         android:label="@string/login_fragment"
         tools:layout="@layout/fragment_login">
+
         <action
             android:id="@+id/action_loginFragment_to_welcomeFragment"
             app:destination="@id/welcomeFragment"
