@@ -2,31 +2,34 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+
+    <!--  very simple layout,
+     the items are aligned in a vertical manner, so LinearLayout is enough.  -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical">
 
         <TextView
+            style="@style/TextAppearance.AppCompat.Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-
             android:text="@string/welcome_msg" />
 
         <TextView
+            style="@style/text_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
             android:text="@string/brief" />
 
         <Button
             android:id="@+id/next_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:onClick="v"
-            android:text="@string/next" />
+            android:text="@string/next"
+            style="@style/btn_style" />
 
     </LinearLayout>
 </layout>

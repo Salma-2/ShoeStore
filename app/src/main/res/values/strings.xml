@@ -22,4 +22,6 @@
     <string name="save">Save</string>
     <string name="email_hint">example@example.example</string>
     <string name="password_hint">secure passowrd</string>
+    <string name="instruction_one">Add A New Shoe By Clicking On The Plus Button</string>
+    <string name="instruction_two">You Can Check All Added Shoes In The Next Screen</string>
 </resources>
