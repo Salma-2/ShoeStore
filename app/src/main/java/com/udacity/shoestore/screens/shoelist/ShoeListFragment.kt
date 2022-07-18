@@ -3,12 +3,17 @@ package com.udacity.shoestore.screens.shoelist
 import android.os.Bundle
 import android.view.*
 import android.widget.LinearLayout
+import androidx.cardview.widget.CardView
+import androidx.core.view.marginEnd
+import androidx.core.view.marginTop
+import androidx.core.view.setMargins
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
+import com.google.android.material.card.MaterialCardView
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import com.udacity.shoestore.databinding.ItemBinding

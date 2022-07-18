@@ -10,6 +10,9 @@
             type="com.udacity.shoestore.screens.SharedShoeViewModel" />
     </data>
 
+    <!--I used constraint view to fix the add new shoe button,
+     and make the scroll view take all space above the button -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -40,6 +43,7 @@
                 android:id="@+id/container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/medium_margin"
                 android:orientation="vertical" />
 
 

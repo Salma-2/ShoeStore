@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -9,47 +11,71 @@
             type="com.udacity.shoestore.models.Shoe" />
     </data>
 
-    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/shoe_item"
+        style="@style/card_style"
+        android:layout_marginTop="8dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="8dp"
-        android:elevation="8dp"
-        app:cardCornerRadius="8dp">
+        android:layout_height="wrap_content">
 
+
+        <!--I used here a LinearLayout because all views are aligned in a vertical manner,
+         if more views (e.g image) are added I may change the layout to Constraint so I can have a vertical and horizontal manners  -->
 
         <LinearLayout
             android:id="@+id/shoeLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="8dp"
             android:orientation="vertical">
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/shoe_name_tv"
+                android:text="@string/shoe_name" />
+
+            <TextView
                 android:id="@+id/shoe_name_tv"
+                style="@style/detail_text_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@{shoe.name}" />
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/company_tv"
+                android:text="@string/company" />
+
+            <TextView
                 android:id="@+id/company_tv"
+                style="@style/detail_text_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@{shoe.company}" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/size_tv"
+                android:text="@string/shoe_size" />
 
             <TextView
                 android:id="@+id/size_tv"
+                style="@style/detail_text_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@{String.valueOf(shoe.size)}" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/desc_tv"
+                android:text="@string/description" />
 
             <TextView
                 android:id="@+id/desc_tv"
+                style="@style/detail_text_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@{shoe.description}" />
@@ -57,5 +83,5 @@
         </LinearLayout>
 
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 </layout>
