@@ -7,25 +7,42 @@
 
         <variable
             name="shoeListViewModel"
-            type="com.udacity.shoestore.screens.shoelist.ShoeListViewModel" />
+            type="com.udacity.shoestore.screens.SharedShoeViewModel" />
     </data>
-    <ScrollView
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/new_shoe_btn"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_gravity="end|bottom"
+            android:layout_margin="@dimen/big_margin"
+            android:contentDescription="@string/add_new_shoe"
+            android:onClick="@{()->shoeListViewModel.onAddNewShoe()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/shoe_sv"
+            app:srcCompat="@drawable/ic_add" />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/new_shoe_btn"
+        <ScrollView
+            android:id="@+id/shoe_sv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/new_shoe_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck">
+
+            <LinearLayout
+                android:id="@+id/container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end|bottom"
-                android:contentDescription="@string/add_new_shoe"
-                android:onClick="@{()->shoeListViewModel.onAddNewShoe()}"
-                app:srcCompat="@drawable/ic_add" />
-        </LinearLayout>
-    </ScrollView>
+                android:orientation="vertical" />
+
+
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

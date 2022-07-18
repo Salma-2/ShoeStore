@@ -7,7 +7,7 @@
 
         <variable
             name="detailViewModel"
-            type="com.udacity.shoestore.screens.detail.DetailViewModel" />
+            type="com.udacity.shoestore.screens.SharedShoeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,6 +31,7 @@
             android:ems="10"
             android:hint="@string/shoe_name"
             android:inputType="textPersonName"
+            android:text="@={detailViewModel.shoe.name}"
             app:layout_constraintStart_toStartOf="@+id/shoe_name_tv"
             app:layout_constraintTop_toBottomOf="@+id/shoe_name_tv" />
 
@@ -39,6 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/company"
+
             app:layout_constraintStart_toStartOf="@+id/shoe_name_input"
             app:layout_constraintTop_toBottomOf="@+id/shoe_name_input" />
 
@@ -49,6 +51,7 @@
             android:ems="10"
             android:hint="@string/company"
             android:inputType="textPersonName"
+            android:text="@={detailViewModel.shoe.company}"
             app:layout_constraintStart_toStartOf="@+id/company_tv"
             app:layout_constraintTop_toBottomOf="@+id/company_tv" />
 
@@ -67,6 +70,7 @@
             android:ems="10"
             android:hint="@string/shoe_size"
             android:inputType="number"
+            android:text="@={``+ detailViewModel.shoe.size}"
             app:layout_constraintStart_toStartOf="@+id/size_tv"
             app:layout_constraintTop_toBottomOf="@+id/size_tv" />
 
@@ -85,6 +89,7 @@
             android:ems="10"
             android:hint="@string/description"
             android:inputType="textMultiLine"
+            android:text="@={detailViewModel.shoe.description}"
             app:layout_constraintStart_toStartOf="@+id/desc_tv"
             app:layout_constraintTop_toBottomOf="@+id/desc_tv" />
 
