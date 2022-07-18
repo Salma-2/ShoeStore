@@ -20,4 +20,6 @@
     <string name="description">Description</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
+    <string name="email_hint">example@example.example</string>
+    <string name="password_hint">secure passowrd</string>
 </resources>
