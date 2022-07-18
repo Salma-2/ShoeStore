@@ -40,7 +40,6 @@
             android:hint="@string/shoe_name"
             android:inputType="textPersonName"
             android:text="@={detailViewModel.shoe.name}"
-
             android:minHeight="48dp"
 
             app:layout_constraintStart_toStartOf="@+id/shoe_name_tv"

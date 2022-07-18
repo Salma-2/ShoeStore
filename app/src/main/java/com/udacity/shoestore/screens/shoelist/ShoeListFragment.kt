@@ -37,7 +37,7 @@ class ShoeListFragment : Fragment() {
 
         viewModel.eventAddNewShoe.observe(viewLifecycleOwner) { isClicked ->
             if (isClicked) {
-                this.findNavController().navigate(R.id.action_shoeListFragment_to_detailFragment)
+                findNavController().navigate(R.id.action_shoeListFragment_to_detailFragment)
                 viewModel.onAddNewShoeComplete()
             }
 
@@ -58,7 +58,8 @@ class ShoeListFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
+        if (item.itemId == R.id.loginFragment)
+            findNavController().popBackStack()
         return NavigationUI.onNavDestinationSelected(
             item,
             view!!.findNavController()
